@@ -42,3 +42,62 @@ header {
     align-items: center;
     margin-left: auto;
 }
+
+/* Form */
+.form-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    margin: 20px 0;
+}
+
+.form-head {
+    font-size: 25px;
+    font-weight: 500;
+    color: blue;
+    text-decoration: underline;
+    justify-content: center;
+    text-align: center;
+    margin: 0 0 20px 0;
+}
+
+.form {
+    width: 53%;
+    padding: 20px 50px;
+    background: #fff;
+    box-shadow: 1px 3px 6px navy;
+    border: 0;
+    border-radius: 8px;
+}
+
+.row-content {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    align-items: center;
+    border: 0px solid green;
+}
+
+.label {
+    min-width: 140px;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+.text {
+    font-size: 16px;
+    color: #42525f;
+    opacity: 1;
+    font-family: Roboto;
+}
+
+.input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
