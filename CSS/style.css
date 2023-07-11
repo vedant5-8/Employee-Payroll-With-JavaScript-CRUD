@@ -45,13 +45,6 @@ header {
     color: gold;
 }
 
-.attached-page {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-left: auto;
-}
-
 /* Form */
 .form-content {
     display: flex;
@@ -202,10 +195,6 @@ textarea {
 
     .logo-name {
         font-size: 12px;
-    }
-
-    .attached-page .btn {
-        font-size: 15px;
     }
 
     .form-content {

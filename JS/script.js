@@ -1,3 +1,9 @@
+// Salary slider 
+
+function rangeSlide(value) {
+    document.getElementById('rangeValue').innerHTML = value;
+}
+
 // Start Date
 
 // Start Date Select Tag
