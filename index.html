@@ -27,7 +27,7 @@
 
     <!-- Form -->
     <div class="form-content">
-        <form class="form" onsubmit="save(); return false">
+        <form class="form" onsubmit="save(event); return false">
 
             <div class="form-head">Employee Payroll Form</div>
 
@@ -74,10 +74,10 @@
                 <label for="" class="label text">Gender</label>
                 <div class="profile-radio-content">
                     <label>
-                        <input type="radio" name="gender" id="gender" value="Male" required>Male
+                        <input type="radio" name="gender" id="male" value="Male" required>Male
                     </label>
                     <label>
-                        <input type="radio" name="gender" id="gender" value="Female" required>Female
+                        <input type="radio" name="gender" id="female" value="Female" required>Female
                     </label>
                 </div>
             </div>
@@ -87,25 +87,25 @@
                 <label for="" class="label text">Department</label>
                 <div class="profile-radio-content">
                     <label>
-                        <input type="checkbox" name="department" id="dept" value="Male">IT
+                        <input type="checkbox" name="it" id="it" value="it">IT
                     </label>
                     <label>
-                        <input type="checkbox" name="department" id="dept" value="Male">Research
+                        <input type="checkbox" name="research" id="research" value="research">Research
                     </label>
                     <label>
-                        <input type="checkbox" name="department" id="dept" value="Female">HR
+                        <input type="checkbox" name="hr" id="hr" value="hr">HR
                     </label>
                     <label>
-                        <input type="checkbox" name="department" id="dept" value="Male">Sales
+                        <input type="checkbox" name="sales" id="sales" value="sales">Sales
                     </label>
                     <label>
-                        <input type="checkbox" name="department" id="dept" value="Female">Finanace
+                        <input type="checkbox" name="finance" id="finance" value="finance">Finanace
                     </label>
                     <label>
-                        <input type="checkbox" name="department" id="dept" value="Female">Marketing
+                        <input type="checkbox" name="marketing" id="marketing" value="marketing">Marketing
                     </label>
                     <label>
-                        <input type="checkbox" name="department" id="dept" value="Female">Other
+                        <input type="checkbox" name="other" id="other" value="other">Other
                     </label>
                 </div>
             </div>
@@ -152,6 +152,7 @@
     </div>
     
     <script src="JS/script.js"></script>
+    <script src="JS/EmployeePayroll.js"></script>
 
 </body>
 </html>

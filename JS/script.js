@@ -31,7 +31,7 @@ monthNames.forEach((name, index) => {
 
 // Populate the year select element with options
 const currentYear = new Date().getFullYear();
-for (let i = currentYear; i >= 1990; i--) {
+for (let i = currentYear; i >= 2020; i--) {
     const option = document.createElement("option");
     option.value = i;
     option.textContent = i;
