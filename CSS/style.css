@@ -131,3 +131,49 @@ select {
     margin-right: 16px;
 }
 
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.row-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.btn {
+    cursor: pointer;
+    padding: 10px 40px;
+    color: white;
+    font-size: 17px;
+    border: 0;
+    border-radius: 10px;
+}
+
+.btn-cancel {
+    background-color: blue;
+}
+
+.btn-cancel:hover {
+    background-color: darkblue;
+}
+
+.btn-submit {
+    background-color: green;
+}
+
+.btn-submit:hover {
+    background-color: darkgreen;
+}
+
+.btn-reset {
+    background-color: red;
+}
+
+.btn-reset:hover {
+    background-color: darkred;
+}
