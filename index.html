@@ -27,7 +27,7 @@
 
     <!-- Form -->
     <div class="form-content">
-        <form class="form" onsubmit="save(event); return false">
+        <form class="form" onsubmit="save(event);">
 
             <div class="form-head">Employee Payroll Form</div>
 
@@ -35,7 +35,7 @@
             <div class="row-content">
                 <label for="" class="label text">Name</label>
                 <input type="text" class="input" id="name" name="name" required>
-                <error-output class="text-error" for="text"></error-output>
+                <span class="texterror"></span>
             </div>
 
             <!-- Radio Input for Profile Picture -->
@@ -74,7 +74,7 @@
                 <label for="" class="label text">Gender</label>
                 <div class="profile-radio-content">
                     <label>
-                        <input type="radio" name="gender" id="male" value="Male" required>Male
+                        <input type="radio" name="gender" id="gender" value="Male" required>Male
                     </label>
                     <label>
                         <input type="radio" name="gender" id="female" value="Female" required>Female
@@ -118,13 +118,14 @@
             </div>
 
             <!-- Select input for start date -->
-            <div class="row-content">
+            <div class="row-content selector">
                 <label for="date" class="label text">Start Date</label>
                 <select id="day"></select>
 
                 <select id="month"></select>
 
                 <select id="year"></select>
+                <span class="texterror"></span>
             </div>
 
             <!-- Textarea for Notes -->
@@ -141,7 +142,7 @@
                     <button type="button" class="btn btn-cancel">Cancel</button>
                 </div>
                 <div>
-                    <button type="submit" class="btn btn-submit" id="submitButton">Submit</button>
+                    <input type="submit" class="btn btn-submit" value="Submit"></input>
                 </div>
                 <div>
                     <button type="reset" class="btn btn-reset">Reset</button>

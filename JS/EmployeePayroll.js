@@ -52,7 +52,7 @@ class Employee {
         let today = new Date();
         let dateLimit = new Date();
         dateLimit.setDate(today.getDate() - 30);
-        if (new Date(value) >= dateLimit && new Date(value) <= today) {
+        if (value >= dateLimit && value <= today) {
             this._startDate = value;
         } else {
             throw new Error("Start date must be within the last 30 days");

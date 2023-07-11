@@ -80,3 +80,29 @@ const today = new Date();
 days.value = today.getDate();
 months.value = today.getMonth() + 1;
 years.value = today.getFullYear();
+
+// validate name and salary using regex
+
+function save(event) {
+    event.preventDefault();
+    let name = document.querySelector('#name').value;
+    let gender = document.querySelector('input[name=gender]:checked').value;
+    let departments = document.querySelectorAll('input[type=checkbox]:checked');
+    let salary = document.querySelector('#rangeValue').value;
+    let day = document.querySelector('#day').value;
+    let month = document.querySelector('#month').value;
+    let year = document.querySelector('#year').value;
+    let startDate = new Date(year, month - 1, day);
+    let employee = new Employee(name, gender, departments, salary, startDate);
+    try {
+        employee.name = name;
+        employee.startDate = startDate;
+        alert(`Employee Name: ${employee.name}\nGender: ${employee.gender}\nSalary: ${employee.salary}\nDepartment: ${employee.departments}\nStart Date: ${employee.startDate}`);
+    } catch (error) {
+        if (error.message === "Invalid name") {
+            document.querySelector('#name + .texterror').textContent = error.message;
+        } else if (error.message === "Start date must be within the last 30 days") {
+            document.querySelector('.selector .texterror').textContent = error.message;
+        }
+    }
+}
