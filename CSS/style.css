@@ -122,3 +122,12 @@ label {
 .input-range {
     width: 100%;
 }
+
+select {
+    padding: 12px;
+    width: 20%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 16px;
+}
+
