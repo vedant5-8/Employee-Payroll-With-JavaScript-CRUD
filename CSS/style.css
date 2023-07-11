@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+}
+
+body { 
+  margin: 0;
+  background-color: floralwhite;
+  background-repeat: no-repeat;
+}
+
+/* Header */
+header {
+    padding: 10px 0;
+    background-color: navy;
+    justify-content: center;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: row;
+    margin: 0 170px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 30%;
+}
+
+.emp-text {
+    color: dodgerblue;
+}
+
+.emp-payroll {
+    color: gold;
+}
+
+.attached-page {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: auto;
+}
