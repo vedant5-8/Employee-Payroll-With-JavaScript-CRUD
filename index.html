@@ -116,8 +116,17 @@
                 </div>
             </div>
 
+            <!-- Range input for salary -->
+            <div class="row-content">
+                <label for="salary" class="label text">Salary</label>
+                <input class="input-range" type="range" name="salary" id="salary" value="0" min="0" max="300000" step="100" onchange="rangeSlide(this.value)" onmousemove="rangeSlide(this.value)">
+                <output id="rangeValue" class="salary-output text" for="salary">0</output>
+            </div>
+
         </form>
     </div>
+
+    <script src="JS/script.js"></script>
     
 </body>
 </html>
