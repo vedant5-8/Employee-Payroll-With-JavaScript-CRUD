@@ -1,9 +1,3 @@
-// Salary slider 
-
-function rangeSlide(value) {
-    document.getElementById('rangeValue').innerHTML = value;
-}
-
 // Start Date
 
 // Start Date Select Tag
@@ -81,28 +75,62 @@ days.value = today.getDate();
 months.value = today.getMonth() + 1;
 years.value = today.getFullYear();
 
-// validate name and salary using regex
+// Day 46- UC2 - set event listeners when document is loaded so as to 
 
-function save(event) {
-    event.preventDefault();
-    let name = document.querySelector('#name').value;
-    let gender = document.querySelector('input[name=gender]:checked').value;
-    let departments = document.querySelectorAll('input[type=checkbox]:checked');
-    let salary = document.querySelector('#rangeValue').value;
-    let day = document.querySelector('#day').value;
-    let month = document.querySelector('#month').value;
-    let year = document.querySelector('#year').value;
-    let startDate = new Date(year, month - 1, day);
-    let employee = new Employee(name, gender, departments, salary, startDate);
-    try {
-        employee.name = name;
-        employee.startDate = startDate;
-        alert(`Employee Name: ${employee.name}\nGender: ${employee.gender}\nSalary: ${employee.salary}\nDepartment: ${employee.departments}\nStart Date: ${employee.startDate}`);
-    } catch (error) {
-        if (error.message === "Invalid name") {
-            document.querySelector('#name + .texterror').textContent = error.message;
-        } else if (error.message === "Start date must be within the last 30 days") {
-            document.querySelector('.selector .texterror').textContent = error.message;
+window.addEventListener('DOMContentLoaded', (event) => {
+
+    // validate name and start date
+
+    const name = document.querySelector('#name');
+    const textError = document.querySelector('.text-error');
+
+    name.addEventListener('input', function() {
+        if (name.value.length == 0) {
+            textError.textContent = "";
+            return;
+        }
+        try {
+            (new EmployeePayrollData()).name = name.value;
+            textError.textContent = "";
+        } catch (e) {
+            textError.textContent = e;
+        }
+    });
+
+    // Salary slider 
+
+    const salary = document.querySelector('#salary');
+    const output = document.querySelector('.salary-output');
+
+    output.textContent = salary.value;
+    salary.addEventListener('input', function() {
+        output.textContent = salary.value;
+    });
+
+    // Validate start date
+
+    const day = document.querySelector('#day');
+    const month = document.querySelector('#month');
+    const year = document.querySelector('#year');
+    const dateError = document.querySelector('.date-error');
+    
+    function validateStartDate() {
+        if (day.value.length == 0 || month.value.length == 0 || year.value.length == 0) {
+            dateError.textContent = "";
+            return;
+        }
+        try {
+            let startDate = new Date(year.value, month.value - 1, day.value);
+            let employeePayrollData = new EmployeePayrollData();
+            employeePayrollData.startDate = startDate;
+            dateError.textContent = "";
+        } catch (e) {
+            dateError.textContent = e;
         }
     }
-}
+    
+    day.addEventListener('change', validateStartDate);
+    month.addEventListener('change', validateStartDate);
+    year.addEventListener('change', validateStartDate);
+
+});

@@ -23,6 +23,7 @@ header {
 .heading {
     font-weight: 800; 
     color: white;
+    font-family: 'Roboto Slab', serif;
 }
 
 .logo-name {
@@ -104,6 +105,12 @@ label {
     border-radius: 4px;
 }
 
+error-output {
+    margin-left: 10px;
+    font-size: 12px;
+    color: red;
+}
+
 .profile-radio-content {
     display: flex;
     flex-direction: row;
@@ -131,6 +138,12 @@ select {
     border: 1px solid #ccc;
     border-radius: 4px;
     margin-right: 16px;
+}
+
+date-error {
+    margin-left: 10px;
+    font-size: 12px;
+    color: red;
 }
 
 textarea {

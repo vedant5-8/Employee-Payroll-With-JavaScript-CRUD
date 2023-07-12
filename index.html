@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee Payroll Form</title>
     <link rel="stylesheet" href="CSS/style.css">
+    <link rel="icon" href="Images/EmployeePayroll.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -27,7 +29,7 @@
 
     <!-- Form -->
     <div class="form-content">
-        <form class="form" onsubmit="save(event);">
+        <form class="form" onsubmit="save();">
 
             <div class="form-head">Employee Payroll Form</div>
 
@@ -35,7 +37,7 @@
             <div class="row-content">
                 <label for="" class="label text">Name</label>
                 <input type="text" class="input" id="name" name="name" required>
-                <span class="texterror"></span>
+                <error-output class="text-error" for="text"></error-output>
             </div>
 
             <!-- Radio Input for Profile Picture -->
@@ -74,7 +76,7 @@
                 <label for="" class="label text">Gender</label>
                 <div class="profile-radio-content">
                     <label>
-                        <input type="radio" name="gender" id="gender" value="Male" required>Male
+                        <input type="radio" name="gender" id="male" value="Male" required>Male
                     </label>
                     <label>
                         <input type="radio" name="gender" id="female" value="Female" required>Female
@@ -87,25 +89,25 @@
                 <label for="" class="label text">Department</label>
                 <div class="profile-radio-content">
                     <label>
-                        <input type="checkbox" name="it" id="it" value="it">IT
+                        <input type="checkbox" name="department" id="it" value="IT">IT
                     </label>
                     <label>
-                        <input type="checkbox" name="research" id="research" value="research">Research
+                        <input type="checkbox" name="department" id="research" value="Research">Research
                     </label>
                     <label>
-                        <input type="checkbox" name="hr" id="hr" value="hr">HR
+                        <input type="checkbox" name="department" id="hr" value="HR">HR
                     </label>
                     <label>
-                        <input type="checkbox" name="sales" id="sales" value="sales">Sales
+                        <input type="checkbox" name="department" id="sales" value="Sales">Sales
                     </label>
                     <label>
-                        <input type="checkbox" name="finance" id="finance" value="finance">Finanace
+                        <input type="checkbox" name="department" id="finance" value="Finanace">Finanace
                     </label>
                     <label>
-                        <input type="checkbox" name="marketing" id="marketing" value="marketing">Marketing
+                        <input type="checkbox" name="department" id="marketing" value="Marketing">Marketing
                     </label>
                     <label>
-                        <input type="checkbox" name="other" id="other" value="other">Other
+                        <input type="checkbox" name="department" id="other" value="Other">Other
                     </label>
                 </div>
             </div>
@@ -113,26 +115,26 @@
             <!-- Range input for salary -->
             <div class="row-content">
                 <label for="salary" class="label text">Salary</label>
-                <input class="input-range" type="range" name="salary" id="salary" value="0" min="0" max="300000" step="100" onchange="rangeSlide(this.value)" onmousemove="rangeSlide(this.value)">
+                <input class="input-range" type="range" name="Salary" id="salary" value="0" min="1000" max="300000" step="100">
                 <output id="rangeValue" class="salary-output text" for="salary">0</output>
             </div>
 
             <!-- Select input for start date -->
             <div class="row-content selector">
                 <label for="date" class="label text">Start Date</label>
-                <select id="day"></select>
+                <select id="day" name="Day"></select>
 
-                <select id="month"></select>
+                <select id="month" name="Month"></select>
 
-                <select id="year"></select>
-                <span class="texterror"></span>
+                <select id="year" name="Year"></select>
+                <error-output class="date-error" for="date"></error-output>
             </div>
 
             <!-- Textarea for Notes -->
             <div class="row-content">
-                <label for="date" class="label text">Notes</label>
+                <label for="date" class="label text">Note</label>
                 
-                <textarea name="notes" id="notes" rows="5"></textarea>
+                <textarea name="Note" id="notes" rows="5"></textarea>
                 
             </div>
 
@@ -154,6 +156,7 @@
     
     <script src="JS/script.js"></script>
     <script src="JS/EmployeePayroll.js"></script>
+    <script src="JS/PayrollScripts.js"></script>
 
 </body>
 </html>
